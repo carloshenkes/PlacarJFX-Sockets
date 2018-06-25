@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class Main extends Application {
+public class MainC extends Application {
 
     public static Stage primaryStage;
     public static Scene sceneBasquete, scenePrincipal;
@@ -21,11 +21,12 @@ public class Main extends Application {
     public static Socket cliente;
     public static ObjectInputStream entrada;
     public static ObjectOutputStream saida;
+    public String TimeEsquerda, TimeDireita;
 
     /**
      * A classe principal da aplicação em JavaFX
      */
-    public Main() {
+    public MainC() {
         thisClass = getClass();
     }
 
@@ -87,5 +88,6 @@ public class Main extends Application {
 //        saida.close();
         return retorno;
     }
+
     
 }

@@ -18,7 +18,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import mainC.Main;
+import mainC.MainC;
 
 /**
  *
@@ -40,7 +40,7 @@ public class FXMLLoginController implements Initializable {
         if (ev.getCode() == KeyCode.ENTER) {
             login();
         } else if (ev.getCode() == KeyCode.ESCAPE) {
-            Main.getStage().close();
+            MainC.getStage().close();
         }
     }
 
@@ -50,7 +50,7 @@ public class FXMLLoginController implements Initializable {
         bacessar.setOnMouseClicked((MouseEvent e) -> {
             login();
 //        if (tflogin.getText().equals("admin") && pfsenha.getText().equals("admin")) {
-            //              Main.loadScene("");
+            //              MainC.loadScene("");
             //        try {
             //  
             //} catch (Exception ex) {
@@ -66,13 +66,13 @@ public class FXMLLoginController implements Initializable {
         });
 
         bsair.setOnMouseClicked((MouseEvent e) -> {
-            Main.getStage().close();
+            MainC.getStage().close();
         });
     }
 
     private void login() {
         /*try {
-            Main.conectar();
+            MainC.conectar();
         } catch (IOException e) {
 
         }
@@ -87,12 +87,12 @@ public class FXMLLoginController implements Initializable {
             alert.show();
         } else {
             try {
-                String[] msg = Main.mandaMSG("!LOGIN@" + user + "@" + password).split("\\@");
+                String[] msg = MainC.mandaMSG("!LOGIN@" + user + "@" + password).split("\\@");
                 if (msg[0].equals("!LOGADO")) {
                     if (msg[1].equals("ADM")) {
                         // implementar tela de cadastro
                     } else if (msg[1].equals("PLACAR")) {
-                        Main.loadScene("/tela/FXMLPrincipal.fxml");
+                        MainC.loadScene("/tela/FXMLPrincipal.fxml");
                     } else if (msg[1].equals("PROP")) {
                         // implementar tela de propaganda
                     }
@@ -112,6 +112,6 @@ public class FXMLLoginController implements Initializable {
     }
 
     public void fecha(ActionEvent e) {
-        Main.getStage().close();
+        MainC.getStage().close();
     }
 }

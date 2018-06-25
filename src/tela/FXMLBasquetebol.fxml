@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="apBasquete" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="1105.0" style="-fx-background-color: #000020;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLBasquetebolController">
+   <children>
+      <BorderPane prefHeight="667.0" prefWidth="967.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <GridPane prefHeight="349.0" prefWidth="967.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="159.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="689.0" minWidth="10.0" prefWidth="689.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="138.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="417.0" minHeight="10.0" prefHeight="167.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="203.0" minHeight="0.0" prefHeight="152.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="lTimeB" text="Time B" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="System Bold" size="41.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="3.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="lPontosB" prefHeight="109.0" prefWidth="111.0" text="00" textFill="#ff641f" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                     <font>
+                        <Font name="System Bold" size="96.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Faltas" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="System Bold" size="45.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Label fx:id="lFaltasB" text="00" textFill="#ff641f" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="64.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" top="30.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Faltas" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="System Bold" size="45.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Label fx:id="lFaltasA" text="00" textFill="#ff641f" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="64.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="10.0" top="30.0" />
+                     </GridPane.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="lTimeB1" layoutX="594.0" layoutY="92.0" text="Time A" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="System Bold" size="41.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="3.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="lPontosA" layoutX="594.0" layoutY="51.0" text="00" textFill="#ff641f" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+                     <font>
+                        <Font name="System Bold" size="96.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <MediaView fx:id="mvBasquete" fitHeight="400.0" fitWidth="550.0" nodeOrientation="INHERIT" preserveRatio="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="280.0" />
+                     </GridPane.margin>
+                  </MediaView>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="419.0" stroke="#ff641f" strokeType="INSIDE" strokeWidth="7.0" width="569.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets bottom="13.5" />
+                     </GridPane.margin>
+                  </Rectangle>
+                  <Button fx:id="bmenospontosB" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="42.0" prefWidth="45.0" text="-" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Bold" size="26.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets left="150.0" top="50.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="bmaispontosB" layoutX="918.0" layoutY="89.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="42.0" prefWidth="45.0" text="+" textAlignment="CENTER" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Bold" size="22.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="45.0" left="150.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label fx:id="lmaispontosB" alignment="CENTER" prefHeight="42.0" prefWidth="45.0" style="-fx-background-color: #FDFDFD;" text="1" textAlignment="CENTER" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="130.0" left="150.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Button fx:id="bmaisfaltasB" layoutX="1068.0" layoutY="105.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="42.0" prefWidth="45.0" text="+" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Bold" size="22.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="30.0" left="150.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="bmenosfaltasB" layoutX="1068.0" layoutY="155.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="42.0" prefWidth="45.0" text="-" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Bold" size="26.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets bottom="35.0" left="150.0" top="100.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label fx:id="lmaispontosA" alignment="CENTER" layoutX="1068.0" layoutY="55.0" prefHeight="42.0" prefWidth="46.0" style="-fx-background-color: #FDFDFD;" text="1" textAlignment="CENTER" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="130.0" right="150.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Button fx:id="bmaispontosA" layoutX="1068.0" layoutY="105.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="42.0" prefWidth="45.0" text="+" textAlignment="CENTER" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font name="Arial Bold" size="22.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="45.0" right="150.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="bmenospontosA" layoutX="1068.0" layoutY="155.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="42.0" prefWidth="45.0" text="-" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font name="Arial Bold" size="26.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets right="150.0" top="50.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="bmaisfaltasA" layoutX="1068.0" layoutY="240.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="42.0" prefWidth="45.0" text="+" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Bold" size="22.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="30.0" right="150.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="bmenosfaltasA" layoutX="1068.0" layoutY="287.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="42.0" prefWidth="45.0" text="-" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Bold" size="26.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets bottom="35.0" right="150.0" top="100.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label fx:id="lmenospontosA" alignment="CENTER" layoutX="33.0" layoutY="15.0" prefHeight="42.0" prefWidth="46.0" style="-fx-background-color: #FDFDFD;" text="1" textAlignment="CENTER" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="150.0" top="137.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="lmenospontosB" alignment="CENTER" layoutX="1068.0" layoutY="15.0" prefHeight="42.0" prefWidth="46.0" style="-fx-background-color: #FDFDFD;" text="1" textAlignment="CENTER" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="150.0" top="137.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+            </GridPane>
+         </bottom>
+         <top>
+            <GridPane prefHeight="313.0" prefWidth="967.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="159.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="637.0" minWidth="10.0" prefWidth="637.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="154.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="212.0" minHeight="10.0" prefHeight="193.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="115.0" stroke="#ff641f" strokeType="INSIDE" strokeWidth="7.0" width="328.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                  </Rectangle>
+                  <Label fx:id="lCronometroB" alignment="TOP_CENTER" contentDisplay="TOP" maxHeight="125.0" maxWidth="330.0" minHeight="25.0" minWidth="134.0" prefHeight="110.0" prefWidth="330.0" text="00:00" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="System Bold" size="110.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="20.0" />
+                     </GridPane.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="-33.0" />
+                     </padding>
+                  </Label>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Periodo" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="System Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="155.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Label fx:id="lPeriodo" prefHeight="92.0" prefWidth="42.0" text="1" textFill="#ff641f" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="System Bold" size="84.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="190.0" top="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ImageView fitHeight="184.0" fitWidth="200.0" pickOnBounds="true" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@../imagens/Aamc.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="184.0" fitWidth="200.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@../imagens/logo-basquete-cearense-2015.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </ImageView>
+                  <Label fx:id="l24seg" text="24" textFill="#ff641f" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="System Bold" size="84.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="185.0" top="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Shot Clock" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="System Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="155.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Button fx:id="bmaisperiodo" mnemonicParsing="false" prefHeight="19.0" prefWidth="18.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="80.0" left="150.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="bmenosperiodo" layoutX="372.0" layoutY="171.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="150.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="bstopshot" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Stop" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" right="120.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="bplayshot" contentDisplay="CENTER" layoutX="222.0" layoutY="208.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="64.0" text="Play" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="80.0" right="120.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="bplaycron" contentDisplay="CENTER" layoutX="702.0" layoutY="170.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="64.0" text="Play" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="30.0" right="80.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="bstopcron" layoutX="701.0" layoutY="208.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Stop" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="80.0" top="50.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -17,7 +17,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import mainC.Main;
+import mainC.MainC;
 
 /**
  *
@@ -47,9 +47,9 @@ public class FXMLPrincipalController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         bFutebol.setOnMouseClicked((MouseEvent e) -> {
-            Main.loadScene("/tela/FXMLDataFutebol.fxml");
+            MainC.loadScene("/tela/FXMLFutebol.fxml");
             try {
-                Main.mandaMSG("!ABRE_FUTEBOL");
+                MainC.mandaMSG("!ABRE_FUTEBOL");
             } catch (IOException ex) {
                 Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -64,10 +64,10 @@ public class FXMLPrincipalController implements Initializable {
 
         bBasquetebol.setOnMouseClicked((MouseEvent e) -> {
             //   JavaFXBasquetebol b = new JavaFXBasquetebol();
-            Main.loadScene("/tela/FXMLSetDados.fxml");           
+            MainC.loadScene("/tela/FXMLBasquetebol.fxml");           
             try {
                 // b.start(new Stage());
-                Main.mandaMSG("!ABRE_BASQUETE");
+                MainC.mandaMSG("!ABRE_BASQUETE");
             } catch (Exception ex) {
                 Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -84,9 +84,9 @@ public class FXMLPrincipalController implements Initializable {
         });
         bVoleibol.setOnMouseClicked((MouseEvent e) -> {
             //  JavaFXVoleibol v = new JavaFXVoleibol();
-            Main.loadScene("/tela/FXMLSetDados.fxml");           
+            MainC.loadScene("/tela/FXMLVoleibol.fxml");           
             try {
-                Main.mandaMSG("!ABRE_VOLEIBOL");
+                MainC.mandaMSG("!ABRE_VOLEIBOL");
                 //      v.start(new Stage());
             } catch (Exception ex) {
                 Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
@@ -110,7 +110,7 @@ public class FXMLPrincipalController implements Initializable {
     }
 
     public void fecha() {
-        Main.getStage().close();
+        MainC.getStage().close();
     }
 
 }
