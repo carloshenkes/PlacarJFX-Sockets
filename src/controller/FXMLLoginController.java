@@ -92,7 +92,7 @@ public class FXMLLoginController implements Initializable {
                     if (msg[1].equals("ADM")) {
                         // implementar tela de cadastro
                     } else if (msg[1].equals("PLACAR")) {
-                        MainC.loadScene("/tela/FXMLPrincipal.fxml");
+                        MainC.loadScene("/telas/FXMLPrincipal.fxml");
                     } else if (msg[1].equals("PROP")) {
                         // implementar tela de propaganda
                     }

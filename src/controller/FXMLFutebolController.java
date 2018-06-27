@@ -505,7 +505,7 @@ public class FXMLFutebolController implements Initializable {
         });
 
         bVolta.setOnMouseClicked((MouseEvent e) -> {
-            MainC.loadScene("/tela/FXMLPrincipal.fxml");
+            MainC.loadScene("/telas/FXMLPrincipal.fxml");
             stopc=false;
         });
 

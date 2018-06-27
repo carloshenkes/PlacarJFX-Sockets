@@ -37,7 +37,7 @@ public class MainC extends Application {
     public void start(Stage primaryStage) throws IOException {
         setStage(primaryStage);
         conectar();
-        loadScene("/tela/FXMLLogin.fxml");
+        loadScene("/telas/FXMLLogin.fxml");
     }
 
     public static void main(String[] args) {
