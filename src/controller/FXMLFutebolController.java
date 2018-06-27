@@ -18,8 +18,6 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.shape.Rectangle;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import mainC.MainC;
@@ -139,14 +137,16 @@ public class FXMLFutebolController implements Initializable {
 
     //configuração do cronometro
     public boolean stopc = true;
+    public boolean cronoPausa = false;
+
     private int segundo = 0;
     private int minuto = 0;
 
     public void iniciaCronometro() {
-        Task t = new Task() {
+        Task t = new Task<Void>() {
 
             @Override
-            protected Object call() throws Exception {
+            public Void call() throws Exception {
                 while (stopc) {
                     segundo++;
 
@@ -167,31 +167,21 @@ public class FXMLFutebolController implements Initializable {
                         lCronometro.setText(min + ":" + seg);
                     });
                     Thread.sleep(1000);
-
+                    
+                    while (cronoPausa) {
+                        Thread.sleep(100);
+                    }
+                    
                 }
                 return null;
             }
         };
+
         new Thread(t).start();
 
     }
 
-    public void crono() {
-        try {
-            if (tbPausa.isSelected()) {
-                //if (MainC.mandaMSG("#PAUSA_CRONO").equals("PAUSADO")) {
-                stopc = true;
-                //}
-            } else {
-                //if (MainC.mandaMSG("#CONTINUA_CRONOS").equals("CONTINUA")) {
-                stopc = false;
-                //}
-            }
-        } catch (Exception e) {
 
-        }
-
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -492,7 +482,7 @@ public class FXMLFutebolController implements Initializable {
             
             if (tbPausa.isSelected()) {
                 //if (MainC.mandaMSG("#PAUSA_CRONO").equals("PAUSADO")) {
-                stopc = false;
+                cronoPausa = false;
                 System.out.println("false");
                 try {
                     String volta = MainC.mandaMSG("!CRONO$PAUSA");
@@ -502,7 +492,7 @@ public class FXMLFutebolController implements Initializable {
                 }
             } else {
                 //if (MainC.mandaMSG("#CONTINUA_CRONOS").equals("CONTINUA")) {
-                stopc = true;
+                cronoPausa = true;
                 System.out.println("true");
                 try {
                     String volta = MainC.mandaMSG("!CRONO$CONTINUA");
@@ -519,13 +509,6 @@ public class FXMLFutebolController implements Initializable {
             stopc=false;
         });
 
-        // ***************
-        //chama e inicia a thread do placar 
-        //Placar();
-        // ***************
-        //chama e inicia a thread do placar 
-        //Faltas();
-        // ***************
     }
 
 }

@@ -4,16 +4,12 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -139,76 +135,6 @@ public class FXMLBasquetebolController implements Initializable {
 
     }
 
-    //Placar
-    public void Placar() {
-        Task t2 = new Task() {
-
-            @Override
-            protected Object call() throws Exception {
-                
-                 //Soma 1 gol ao placar do time da esquerda
-                //ao pressionar <-
-                apBasquete.getScene().addEventFilter(KeyEvent.KEY_PRESSED, event -> {
-                    int pe = 0;                
-                int pd = 0;
-                    if (event.getCode().equals(KeyCode.LEFT)) {
-                        
-                        pe = Integer.parseInt(lPontosA.getText());
-                        pe = (pe + 1);
-                        String spe = Integer.toString(pe);
-                        if(pe < 10){
-                        Platform.runLater(() -> {
-
-                            lPontosA.setText("0"+spe);
-                        });
-                        };
-                        if(pe >= 10){
-                        Platform.runLater(() -> {
-
-                            lPontosA.setText(spe);
-                        });
-                        };
-                    }
-
-                    //Soma 1 gol ao placar do time da direita
-                    //ao pressionar ->
-                    if (event.getCode().equals(KeyCode.RIGHT)) {
-                        
-                        pd = Integer.parseInt(lPontosB.getText());
-                        pd = (pd + 1);
-                        String spd = Integer.toString(pd);
-                        if(pd < 10){
-                        Platform.runLater(() -> {
-
-                            lPontosB.setText("0"+spd);
-                        });
-                        }
-                        if(pd >= 10){
-                        Platform.runLater(() -> {
-
-                            lPontosB.setText(spd);
-                        });
-                        }
-                    }
-                });
-                //}
-                return null;
-            }
-        };
-        new Thread(t2).start();
-
-    }
-    
-    //função abaixo, pega o time que foi setado
-    //na tela de configuração do placar
-    public void pegarTime(String nomea, String nomeb) {
-
-        this.lTimeA.setText(nomea);
-        this.lTimeB.setText(nomeb);
-
-    }
-    // final do pega time
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -218,7 +144,6 @@ public class FXMLBasquetebolController implements Initializable {
         mvBasquete.setMediaPlayer(mediaplayer);
         mediaplayer.play();
        iniciaCronometro();
-       //Placar();
 
     }
 
