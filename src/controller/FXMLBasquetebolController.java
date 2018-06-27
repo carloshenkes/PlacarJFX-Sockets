@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
@@ -469,6 +471,11 @@ public class FXMLBasquetebolController implements Initializable {
 
         bVolta.setOnMouseClicked((MouseEvent e) -> {
             MainC.loadScene("/telas/FXMLPrincipal.fxml");
+            try {
+                MainC.mandaMSG("VOLTOU");
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLFutebolController.class.getName()).log(Level.SEVERE, null, ex);
+            }
             stopc=false;
         });
         

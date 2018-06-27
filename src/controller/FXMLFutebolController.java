@@ -18,6 +18,8 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.shape.Rectangle;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import mainC.MainC;
@@ -116,7 +118,7 @@ public class FXMLFutebolController implements Initializable {
     @FXML
     public ToggleButton tbPausa;
     @FXML
-    public Label lmaisacrescimo;
+    public Label lSomaAcre;
     @FXML
     public Label lacrescimo;
     @FXML
@@ -126,8 +128,8 @@ public class FXMLFutebolController implements Initializable {
 
     private int pontosE = 0;
     private int pontosD = 0;
-
-    private static FXMLLoginController lc;
+    private int periodo = 0;
+    private int acrescimo = 0;
 
     //configuração multimedia {
     private static File file = new File("src/videos/Propaganda.mp4");
@@ -167,11 +169,11 @@ public class FXMLFutebolController implements Initializable {
                         lCronometro.setText(min + ":" + seg);
                     });
                     Thread.sleep(1000);
-                    
+
                     while (cronoPausa) {
                         Thread.sleep(100);
                     }
-                    
+
                 }
                 return null;
             }
@@ -180,8 +182,6 @@ public class FXMLFutebolController implements Initializable {
         new Thread(t).start();
 
     }
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -478,8 +478,44 @@ public class FXMLFutebolController implements Initializable {
             }
         });
 
+        bSomaPeriodo.setOnMouseClicked((MouseEvent ev) -> {
+            try {
+                String volta = MainC.mandaMSG("!PERIODO@SOMA");
+                periodo++;
+            } catch (IOException e) {
+
+            }
+            Platform.runLater(() -> {
+                lacrescimo.setText(periodo + "º");
+            });
+        });
+        
+        bMenosPeriodo.setOnMouseClicked((MouseEvent ev) -> {
+            try {
+                String volta = MainC.mandaMSG("!PERIODO@SOMA");
+                periodo--;
+            } catch (IOException e) {
+
+            }
+            Platform.runLater(() -> {
+                lacrescimo.setText(periodo + "º");
+            });
+        });
+
+        bSomaAcrescimo.setOnMouseClicked((MouseEvent ev) -> {
+            try {
+                String volta = MainC.mandaMSG("!ACRESCIMO@SOMA");
+                acrescimo++;
+            } catch (IOException e) {
+
+            }
+            Platform.runLater(() -> {
+                lacrescimo.setText(acrescimo + "");
+            });
+        });
+
         tbPausa.setOnMouseClicked((MouseEvent e) -> {
-            
+
             if (tbPausa.isSelected()) {
                 //if (MainC.mandaMSG("#PAUSA_CRONO").equals("PAUSADO")) {
                 cronoPausa = false;
@@ -488,7 +524,7 @@ public class FXMLFutebolController implements Initializable {
                     String volta = MainC.mandaMSG("!CRONO$PAUSA");
                     //}
                 } catch (IOException ex) {
-                    
+
                 }
             } else {
                 //if (MainC.mandaMSG("#CONTINUA_CRONOS").equals("CONTINUA")) {
@@ -498,7 +534,7 @@ public class FXMLFutebolController implements Initializable {
                     String volta = MainC.mandaMSG("!CRONO$CONTINUA");
                     //}
                 } catch (IOException ex) {
-                    
+
                 }
                 //}
             }
@@ -506,7 +542,12 @@ public class FXMLFutebolController implements Initializable {
 
         bVolta.setOnMouseClicked((MouseEvent e) -> {
             MainC.loadScene("/telas/FXMLPrincipal.fxml");
-            stopc=false;
+            try {
+                MainC.mandaMSG("VOLTOU");
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLFutebolController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            stopc = false;
         });
 
     }

@@ -384,14 +384,6 @@
                         <Insets bottom="50.0" right="45.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label fx:id="lmaisacrescimo" alignment="CENTER" contentDisplay="CENTER" prefHeight="39.0" prefWidth="41.0" style="-fx-background-color: #FFFFFF;" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
-                     <font>
-                        <Font name="System Bold" size="27.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets right="93.0" top="60.0" />
-                     </GridPane.margin>
-                  </Label>
                   <Button fx:id="bSomaAcrescimo" layoutX="914.0" layoutY="141.0" mnemonicParsing="false" text="+" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
@@ -417,6 +409,14 @@
                         <Insets bottom="20.0" />
                      </GridPane.margin>
                   </Text>
+                  <TextField fx:id="lSomaAcre" maxHeight="39.0" maxWidth="41.0" promptText="0" text="0" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="290.0" top="60.0" />
+                     </GridPane.margin>
+                  </TextField>
                </children>
             </GridPane>
          </top>
